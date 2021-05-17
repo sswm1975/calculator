@@ -1,6 +1,6 @@
 <Container>:
     orientation: 'vertical'
-    padding: 10
+    padding: 4
 
     label_info: id_label_info
     label_input: id_label_input
@@ -28,69 +28,94 @@
         cols: 4
 
         Button:
-            text: "7"
-            on_press:
-                root.add_number(self)
+            text: "1"
+            on_release:
+                root.add_in_formula(self)
         Button:
-            text: "8"
-            on_press:
-                root.add_number(self)
+            text: "2"
+            on_release:
+                root.add_in_formula(self)
         Button:
-            text: "9"
-            on_press:
-                root.add_number(self)
+            text: "3"
+            on_release:
+                root.add_in_formula(self)
         Button:
-            text: "*"
-            on_press:
-                root.add_number(self)
+            text: "+"
+            background_color: "grey"
+            on_release:
+                root.add_in_formula(self)
 
         Button:
             text: "4"
-            on_press:
-                root.add_number(self)
+            on_release:
+                root.add_in_formula(self)
         Button:
             text: "5"
-            on_press:
-                root.add_number(self)
+            on_release:
+                root.add_in_formula(self)
         Button:
             text: "6"
-            on_press:
-                root.add_number(self)
+            on_release:
+                root.add_in_formula(self)
         Button:
             text: "-"
-            on_press:
-                root.add_number(self)
+            background_color: "grey"
+            on_release:
+                root.add_in_formula(self)
 
         Button:
-            text: "1"
-            on_press:
-                root.add_number(self)
+            text: "7"
+            on_release:
+                root.add_in_formula(self)
         Button:
-            text: "2"
-            on_press:
-                root.add_number(self)
+            text: "8"
+            on_release:
+                root.add_in_formula(self)
         Button:
-            text: "3"
-            on_press:
-                root.add_number(self)
+            text: "9"
+            on_release:
+                root.add_in_formula(self)
         Button:
-            text: "+"
-            on_press:
-                root.add_number(self)
+            text: "x"
+            background_color: "grey"
+            on_release:
+                root.add_in_formula(self)
 
         Button:
-            text: "/"
-            on_press:
-                root.add_number(self)
+            text: "+/-"
+            on_release:
+                root.set_sign(self)
         Button:
             text: "0"
-            on_press:
-                root.add_number(self)
+            on_release:
+                root.add_in_formula(self)
         Button:
             text: "."
-            on_press:
-                root.add_number(self)
+            on_release:
+                root.add_in_formula(self)
+        Button:
+            text: "/"
+            background_color: "grey"
+            on_release:
+                root.add_in_formula(self)
+
+        Button:
+            text: "("
+            background_color: "lightblue"
+            on_release:
+                root.add_in_formula(self)
+        Button:
+            text: ")"
+            background_color: "lightblue"
+            on_release:
+                root.add_in_formula(self)
+        Button:
+            text: "C"
+            background_color: "red"
+            on_release:
+                root.clear_formula(self)
         Button:
             text: "="
-            on_press:
+            background_color: "yellow"
+            on_release:
                 root.calc_result(self)
