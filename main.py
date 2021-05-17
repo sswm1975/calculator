@@ -1,10 +1,10 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
-from kivy.core.window import Window
+# from kivy.core.window import Window
 
 # Window.size = (1080,1920)
-Window.size = (270,480)
+# Window.size = (270,480)
 
 # from calculator.config import Config
 # Config.set('graphics', 'resizable', 0)
