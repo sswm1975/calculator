@@ -20,5 +20,5 @@ install:
   - export PATH=$PATH:~/.local/bin/
   - yes | buildozer android debug
   - gem install dpl --pre
-  - dpl releases --token $GITHUB_TOKEN --file "bin/calculator-0.3-armeabi-v7a-debug.apk" --tag_name "v.0.3"
+  - dpl releases --token $GITHUB_TOKEN --file "bin/calculator-0.4-armeabi-v7a-debug.apk" --tag_name "v.0.4"
   - echo "END"

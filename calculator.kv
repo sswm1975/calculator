@@ -28,6 +28,28 @@
         cols: 4
 
         Button:
+            text: "("
+            background_color: "lightblue"
+            on_release:
+                root.add_in_formula(self)
+        Button:
+            text: ")"
+            background_color: "lightblue"
+            on_release:
+                root.add_in_formula(self)
+        Button:
+            text: "C"
+            background_color: "red"
+            on_release:
+                root.clear_formula(self)
+        Button:
+            text: "<-"
+            font_size: "26sp"
+            background_color: "pink"
+            on_release:
+                root.delete_char(self)
+
+        Button:
             text: "1"
             on_release:
                 root.add_in_formula(self)
@@ -41,6 +63,7 @@
                 root.add_in_formula(self)
         Button:
             text: "+"
+            font_size: "26sp"
             background_color: "grey"
             on_release:
                 root.add_in_formula(self)
@@ -59,6 +82,7 @@
                 root.add_in_formula(self)
         Button:
             text: "-"
+            font_size: "26sp"
             background_color: "grey"
             on_release:
                 root.add_in_formula(self)
@@ -77,14 +101,15 @@
                 root.add_in_formula(self)
         Button:
             text: "x"
+            font_size: "26sp"
             background_color: "grey"
             on_release:
                 root.add_in_formula(self)
 
         Button:
-            text: "+/-"
+            text: "x²"
             on_release:
-                root.set_sign(self)
+                root.sqrt(self)
         Button:
             text: "0"
             on_release:
@@ -94,28 +119,16 @@
             on_release:
                 root.add_in_formula(self)
         Button:
-            text: "/"
+            text: "÷"
+            font_size: "26sp"
             background_color: "grey"
             on_release:
                 root.add_in_formula(self)
 
-        Button:
-            text: "("
-            background_color: "lightblue"
-            on_release:
-                root.add_in_formula(self)
-        Button:
-            text: ")"
-            background_color: "lightblue"
-            on_release:
-                root.add_in_formula(self)
-        Button:
-            text: "C"
-            background_color: "red"
-            on_release:
-                root.clear_formula(self)
-        Button:
-            text: "="
-            background_color: "yellow"
-            on_release:
-                root.calc_result(self)
+    Button:
+        text: "="
+        font_size: "26sp"
+        background_color: "green"
+        size_hint_y: 0.2
+        on_release:
+            root.calc_result(self)

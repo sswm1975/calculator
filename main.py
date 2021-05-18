@@ -25,12 +25,11 @@ class Container(BoxLayout):
         self.formula += str(instance.text)
         self.label_input.text = self.formula
 
-    def set_sign(self, instance):
-        if self.formula[0] == '-':
-            self.formula = self.formula[1:]
-        else:
-            self.formula = '-' + self.formula
+    def sqrt(self, instance):
+        if self.formula == '':
+            return
 
+        self.formula += '^'
         self.label_input.text = self.formula
 
     def clear_formula(self, instance):
@@ -38,12 +37,19 @@ class Container(BoxLayout):
         self.label_input.text = ''
         self.label_info.text = ''
 
+    def delete_char(self, instance):
+        if self.formula == '':
+            return
+
+        self.formula = self.formula[:-1]
+        self.label_input.text = self.formula
+
     def calc_result(self, instance):
         if self.formula == '':
             return
 
         try:
-            calc = str(eval(self.formula.replace('x', '*')))
+            calc = str(eval(self.formula.replace('x', '*').replace('^','**')))
         except:
             self.label_info.color = 'red'
             self.label_info.text = 'Error'
@@ -54,7 +60,7 @@ class Container(BoxLayout):
                 calc = calc[:-2]
 
             self.label_input.text = calc
-            self.label_info.text = self.formula + ' ='
+            self.label_info.text = self.formula + '='
             self.formula = calc
 
 
